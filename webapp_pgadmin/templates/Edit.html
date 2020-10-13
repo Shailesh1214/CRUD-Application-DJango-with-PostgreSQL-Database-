@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <title> CRUD Operations With PostgreSQL</title>
+</head>
+<body>
+    <center>
+        <h1> How to EDIT Employee Details with PostgreSQL</h1>
+        <hr/>
+        <table border="1">
+            <tr>
+                <td> Employee Id </td>
+                <td><input type ="text" name="id" value="{{EMpModel.id}}" readonly></td>
+            </tr>
+            <tr>
+                <td> Employee Name </td>
+                <td><input type ="text" name="empname" value="{{EMpModel.empname}}"></td>
+            </tr>
+            <tr>
+                <td> Email</td>
+                <td><input type ="text" name="email" value="{{EMpModel.email}}"></td>
+            </tr>
+            <tr>
+                <td> Occupation </td>
+                <td><input type ="text" name="occuapation" value="{{EMpModel.occuapation}}"></td>
+            </tr>
+            <tr>
+                <td> Salary </td>
+                <td><input type ="text" name="salary" value="{{EMpModel.salary}}"></td>
+            </tr>
+            <tr>
+                <td> Gender </td>
+                <td><input type ="text" name="gender" value="{{EMpModel.gender}}"></td>
+            </tr>
+
+        </table>
+        <a href="{% url 'showemp' %}"> Go to Home page</a>
+       
+        </table>
+    </center>
+</body>
+</html>

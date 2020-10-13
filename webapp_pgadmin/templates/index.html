@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <title> CRUD Operations With PostgreSQL</title>
+</head>
+<body>
+    <center>
+        <h1> How to create CRUD Operation with PostgreSQL</h1>
+        
+        <hr/>
+        <a href="{% url 'Insertemp' %}"> Create New Employee</a>
+        <table border="1">
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Email</th>
+                <th>Occupation</th>
+                <th>Salary</th>
+                <th>Gender</th>
+            </tr>
+            <!-- To fetch the record from the table -->
+
+            {% for result in data %}
+            <tr>
+                <td>{{result.id}}</td>
+                <td>{{result.empname}}</td>
+                <td>{{result.email}}</td>
+                <td>{{result.occuapation}}</td>
+                <td>{{result.salary}}</td>
+                <td>{{result.gender}}</td>
+                <td><a href="Edit/{{result.id}}"> Edit </a></td>
+                <td><a href="#"/> Delete </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
