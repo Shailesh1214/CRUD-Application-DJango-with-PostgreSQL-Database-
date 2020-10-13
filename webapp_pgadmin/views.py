@@ -1,6 +1,8 @@
+from django import forms
 from django.shortcuts import render
 from webapp_pgadmin.models import EmpModel
 from django.contrib import messages
+from webapp_pgadmin.forms import Empforms
 def showemp(request):
     showall=EmpModel.objects.all()
     return render(request,'index.html',{"data":showall})
@@ -23,3 +25,11 @@ def Insertemp(request):
 def Editemp(request,id):
     Editempobj=EmpModel.objects.get(id=id)
     return render(request,'Edit.html',{"EmpModel":Editempobj})
+    
+def updateemp(request,id):
+    Updateemp=EmpModel.objects.get(id=id)
+    form=Empforms(request.POST,instance=Updateemp)
+    if form.is_valid():
+        form.save()
+        messages.success(request,'Record Update Successfully....!')
+        return render(request,'Edit.html',{"EmpModel":Updateemp})

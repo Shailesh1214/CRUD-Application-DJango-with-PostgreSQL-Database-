@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.showemp,name="showemp"),
     path('insert',views.Insertemp,name="Insertemp"),
-    path('Edit/<int:id>',views.Editemp,name="Editemp")
+    path('Edit/<int:id>',views.Editemp,name="Editemp"),
+    path('Update/<int:id>',views.Editemp,name="updateemp"),
 ]
