@@ -33,3 +33,9 @@ def updateemp(request,id):
         form.save()
         messages.success(request,'Record Update Successfully....!')
         return render(request,'Edit.html',{"EmpModel":Updateemp})
+
+def Delemp(request,id):
+    delemployee=EmpModel.objects.get(id=id)
+    delemployee.delete()
+    showdata=EmpModel.objects.all()
+    return render(request,'index.html',{"data": showdata})
